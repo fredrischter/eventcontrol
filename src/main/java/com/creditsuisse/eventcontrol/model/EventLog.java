@@ -14,5 +14,25 @@ public class EventLog {
 	String type;
 	
 	String host;
+
+	public boolean isStart() {
+		return "STARTED".equals(getState());
+	}
+
+	public boolean isEnd() {
+		return "FINISHED".equals(getState());
+	}
+
+	public Long getStart() {
+		if (isStart())
+			return timestamp;
+		return null;
+	}
+
+	public Long getEnd() {
+		if (isEnd())
+			return timestamp;
+		return null;
+	}
 	
 }
