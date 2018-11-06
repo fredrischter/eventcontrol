@@ -7,8 +7,6 @@ import java.util.Scanner;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
 
@@ -21,9 +19,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Service
 public class EventProcessingService {
-	
-	@Autowired
-	private ApplicationContext context;
 	
 	@Autowired
 	EventLogRepository eventLogRepository;
@@ -43,7 +38,6 @@ public class EventProcessingService {
 			
 		}
 		
-		((ConfigurableApplicationContext) context).close();
 	}
 
 	private void process(String line) throws IOException {
