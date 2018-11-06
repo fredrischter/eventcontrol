@@ -10,7 +10,6 @@ import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
 
-import com.creditsuisse.eventcontrol.exception.InputNotDefinedException;
 import com.creditsuisse.eventcontrol.model.EventData;
 import com.creditsuisse.eventcontrol.model.EventLog;
 import com.creditsuisse.eventcontrol.repository.EventDataRepository;
@@ -28,7 +27,7 @@ public class EventProcessingService {
 	EventDataRepository eventDataRepository;
 
 	@EventListener(ApplicationReadyEvent.class)
-	public void processEvents() throws InputNotDefinedException, IOException {
+	public void processEvents() throws IOException {
 		
 		InputStream inputStream = eventLogRepository.list();
 		try (Scanner scanner = new Scanner(inputStream)) {
