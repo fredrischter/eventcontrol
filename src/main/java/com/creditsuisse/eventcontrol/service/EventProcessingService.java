@@ -15,8 +15,6 @@ import com.creditsuisse.eventcontrol.model.EventData;
 import com.creditsuisse.eventcontrol.model.EventLog;
 import com.creditsuisse.eventcontrol.repository.EventDataRepository;
 import com.creditsuisse.eventcontrol.repository.EventLogRepository;
-import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 
@@ -30,7 +28,7 @@ public class EventProcessingService {
 	EventDataRepository eventDataRepository;
 
 	@EventListener(ApplicationReadyEvent.class)
-	public void processEvents() throws InputNotDefinedException, JsonParseException, JsonMappingException, IOException {
+	public void processEvents() throws InputNotDefinedException, IOException {
 		
 		InputStream inputStream = eventLogRepository.list();
 		try (Scanner scanner = new Scanner(inputStream)) {
@@ -43,7 +41,7 @@ public class EventProcessingService {
 
 	}
 
-	private void process(String line) throws JsonParseException, JsonMappingException, IOException {
+	private void process(String line) throws IOException {
 		EventLog event = new ObjectMapper().readValue(line, EventLog.class);
 		
 		Optional<EventData> foundEventData = eventDataRepository.findById(event.getId());
