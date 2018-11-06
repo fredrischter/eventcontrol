@@ -7,6 +7,7 @@ import java.io.InputStream;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Repository;
@@ -19,14 +20,17 @@ public class EventLogRepository {
     @Autowired
     ApplicationArguments appArgs;
     
+    @Value("${input}")
+    String input;
+    
 	public InputStream list() throws InputNotDefinedException, FileNotFoundException {
-		List<String> inputItems = appArgs.getOptionValues("input");
+		/*List<String> inputItems = appArgs.getOptionValues("input");
 		
 		if (inputItems == null || inputItems.isEmpty()) {
 			throw new InputNotDefinedException();
-		}
+		}*/
 		
-		String input = inputItems.get(0);
+		//String input = input;//inputItems.get(0);
 		
 		InputStream inputStream;
 		
