@@ -6,7 +6,7 @@ This is a log management system, that will read a file and then process the logs
 
 gradle build
 
-java -jar build/libs/eventcontrol-0.0.1-SNAPSHOT.jar --input=example.org
+java -jar build/libs/eventcontrol-0.0.1-SNAPSHOT.jar --input=example.log
 
 It will produce a alert.mv.db file containing the log registers, some of them flagged with alert=true.
 
@@ -14,4 +14,7 @@ It will produce a alert.mv.db file containing the log registers, some of them fl
 
 ### How to find the alerts
 
+## Next steps
 
+* Implementing tests
+* Maybe transforming from springboot to springbatch application
