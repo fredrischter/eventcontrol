@@ -17,4 +17,3 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create-drop
-input: example.log
