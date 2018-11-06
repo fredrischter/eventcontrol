@@ -5,6 +5,10 @@ import lombok.Data;
 @Data
 public class EventLog {
 
+	private static final String FINISHED = "FINISHED";
+
+	private static final String STARTED = "STARTED";
+
 	String id;
 	
 	String state;
@@ -16,11 +20,11 @@ public class EventLog {
 	String host;
 
 	public boolean isStart() {
-		return "STARTED".equals(getState());
+		return STARTED.equals(getState());
 	}
 
 	public boolean isEnd() {
-		return "FINISHED".equals(getState());
+		return FINISHED.equals(getState());
 	}
 
 	public Long getStart() {

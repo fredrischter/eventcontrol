@@ -19,6 +19,10 @@ import lombok.extern.slf4j.Slf4j;
 @ToString
 public class EventData {
 
+	private static final int TIME_TOLERANCE = 4;
+
+	private static final String GENERATED_ALERT_FOR = "Generated alert for ";
+
 	@Id
 	String id;
 	
@@ -51,9 +55,9 @@ public class EventData {
 		}
 		if (getStart() != null && getEnd() != null) {
 			long duration = getEnd() - getStart();
-			if (duration > 4) {
+			if (duration > TIME_TOLERANCE) {
 				setAlert(true);
-				log.info("Generated alert for "+this);
+				log.info(GENERATED_ALERT_FOR+this);
 			}
 		}
 	}
