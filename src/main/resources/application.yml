@@ -4,7 +4,7 @@
 spring:
   profiles: default
   datasource:
-    url: jdbc:h2:mem:alert;DB_CLOSE_ON_EXIT=FALSE
+    url: jdbc:h2:./alert;DB_CLOSE_ON_EXIT=FALSE
     driver-class-name: org.h2.Driver
   
 ---
