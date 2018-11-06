@@ -12,6 +12,6 @@ public class EventLogRepository {
 
 	public List<EventLog> list() {
 		// TODO implement
-		return new ArrayList<EventLog>();
+		return new ArrayList<>();
 	}
 }
