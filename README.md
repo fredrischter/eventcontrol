@@ -16,5 +16,5 @@ It will produce a alert.mv.db file containing the log registers, some of them fl
 
 ## Next steps
 
-* Implementing tests
-* Maybe transforming from springboot to springbatch application
+* Testing corner cases
+* Transforming from springboot to springbatch application
