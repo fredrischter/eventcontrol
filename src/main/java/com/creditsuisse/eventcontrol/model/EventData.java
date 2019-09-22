@@ -5,10 +5,12 @@ import org.slf4j.LoggerFactory;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 
 @Entity
 public class EventData {
 
+	@Transient
 	private final Logger logger = LoggerFactory.getLogger(EventData.class);
 	private static final int TIME_TOLERANCE = 4;
 	private static final String GENERATED_ALERT_FOR = "Generated alert for ";
