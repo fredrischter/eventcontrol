@@ -16,7 +16,6 @@ import com.creditsuisse.eventcontrol.repository.EventDataRepository;
 import com.creditsuisse.eventcontrol.repository.EventLogRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-
 @Service
 public class EventProcessingService {
 	
