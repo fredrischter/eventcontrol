@@ -54,6 +54,9 @@ public class EventProcessingService {
 		
 		eventDataRepository.save(eventData);
 	}
-	
-	
+
+
+	public Iterable<EventData> getEvents() {
+		return eventDataRepository.findAll();
+	}
 }
