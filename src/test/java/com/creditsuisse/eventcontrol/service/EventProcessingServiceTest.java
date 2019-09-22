@@ -31,7 +31,7 @@ public class EventProcessingServiceTest {
             .collect(Collectors.groupingBy(EventData::getId));
 
         // Then
-        assertThat(events).hasSize(4);
+        assertThat(events).hasSize(3);
         assertThat(employeesMap).containsKeys("scsmbstgra", "scsmbstgrb", "scsmbstgrc");
     }
 }
